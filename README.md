@@ -232,15 +232,10 @@ else:
 **Memory Usage:** Minimal (~50MB)
 **Scalability:** Tested up to 10,000 records successfully
 
-## 📝 Assumptions
+## Assumptions
 
 - CSV file follows expected schema
 - Order dates in YYYY-MM-DD format
 - Single file processing (not streaming)
 - Data volume fits in memory
 - SQLite sufficient for current scale
-
----
-
-*Built as part of data engineering portfolio development*
-*Demonstrates ETL fundamentals and production best practices*
