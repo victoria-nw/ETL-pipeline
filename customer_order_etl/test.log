@@ -1,0 +1,140 @@
+2026-01-05 11:54:16,251:INFO:main.py:================================================================================
+2026-01-05 11:54:16,251:INFO:main.py: 
+2026-01-05 11:54:16,251:INFO:main.py:================================================================================
+2026-01-05 11:54:16,251:INFO:main.py:=== ETL Pipeline Started ===
+2026-01-05 11:54:16,251:INFO:main.py:================================================================================
+2026-01-05 11:54:16,260:INFO:main.py:raw data loaded successfully
+2026-01-05 11:54:16,273:INFO:main.py:Raw data shape: (25, 8)
+2026-01-05 11:54:16,273:INFO:main.py:=== ETL Pipeline Completed Successfully ===
+2026-01-05 11:54:16,274:INFO:main.py:================================================================================
+2026-01-05 11:54:16,274:INFO:main.py: 
+2026-01-05 12:00:41,435:INFO:main.py:================================================================================
+2026-01-05 12:00:41,436:INFO:main.py: 
+2026-01-05 12:00:41,436:INFO:main.py:================================================================================
+2026-01-05 12:00:41,436:INFO:main.py:=== ETL Pipeline Started ===
+2026-01-05 12:00:41,436:INFO:main.py:================================================================================
+2026-01-05 12:00:41,441:INFO:main.py:raw data loaded successfully
+2026-01-05 12:00:41,490:INFO:main.py:Raw data shape: (25, 8)
+2026-01-05 12:00:41,491:INFO:main.py:Starting data validation
+2026-01-05 12:00:41,538:CRITICAL:main.py:Pipeline failed: 'price_per_unit'
+2026-01-05 12:02:06,580:INFO:main.py:================================================================================
+2026-01-05 12:02:06,580:INFO:main.py: 
+2026-01-05 12:02:06,581:INFO:main.py:================================================================================
+2026-01-05 12:02:06,581:INFO:main.py:=== ETL Pipeline Started ===
+2026-01-05 12:02:06,581:INFO:main.py:================================================================================
+2026-01-05 12:02:06,585:INFO:main.py:raw data loaded successfully
+2026-01-05 12:02:06,592:INFO:main.py:Raw data shape: (25, 8)
+2026-01-05 12:02:06,592:INFO:main.py:Starting data validation
+2026-01-05 12:02:06,602:INFO:main.py:validation complete --> all data valid
+2026-01-05 12:02:06,602:INFO:main.py:=== ETL Pipeline Completed Successfully ===
+2026-01-05 12:02:06,602:INFO:main.py:================================================================================
+2026-01-05 12:02:06,602:INFO:main.py: 
+2026-01-08 13:30:22,080:INFO:main.py:================================================================================
+2026-01-08 13:30:22,080:INFO:main.py: 
+2026-01-08 13:30:22,080:INFO:main.py:================================================================================
+2026-01-08 13:30:22,080:INFO:main.py:=== ETL Pipeline Started ===
+2026-01-08 13:30:22,081:INFO:main.py:================================================================================
+2026-01-08 13:30:22,103:INFO:main.py:raw data loaded successfully
+2026-01-08 13:30:22,116:INFO:main.py:Raw data shape: (25, 8)
+2026-01-08 13:30:22,116:INFO:main.py:Starting data validation
+2026-01-08 13:30:22,144:INFO:main.py:validation complete --> all data valid
+2026-01-08 13:30:22,145:INFO:main.py:total_order_value column added
+2026-01-08 13:30:22,149:INFO:main.py:transformed order_date
+2026-01-08 13:30:22,151:INFO:main.py:order_month column created
+2026-01-08 13:30:22,151:INFO:main.py:ensured quantity and price_usd are numeric
+2026-01-08 13:30:22,153:INFO:main.py:dropped empty quantity and prise_usd columns
+2026-01-08 13:30:22,153:INFO:main.py:transformed data
+2026-01-08 13:30:22,162:INFO:main.py:Raw data shape: (25, 10)
+2026-01-08 13:30:22,162:INFO:main.py:Preparing data for loading
+2026-01-08 13:30:22,163:CRITICAL:main.py:Pipeline failed: "['product'] not in index"
+2026-01-08 13:32:06,545:INFO:main.py:================================================================================
+2026-01-08 13:32:06,546:INFO:main.py: 
+2026-01-08 13:32:06,546:INFO:main.py:================================================================================
+2026-01-08 13:32:06,546:INFO:main.py:=== ETL Pipeline Started ===
+2026-01-08 13:32:06,546:INFO:main.py:================================================================================
+2026-01-08 13:32:06,551:INFO:main.py:raw data loaded successfully
+2026-01-08 13:32:06,559:INFO:main.py:Raw data shape: (25, 8)
+2026-01-08 13:32:06,559:INFO:main.py:Starting data validation
+2026-01-08 13:32:06,568:INFO:main.py:validation complete --> all data valid
+2026-01-08 13:32:06,569:INFO:main.py:total_order_value column added
+2026-01-08 13:32:06,572:INFO:main.py:transformed order_date
+2026-01-08 13:32:06,574:INFO:main.py:order_month column created
+2026-01-08 13:32:06,574:INFO:main.py:ensured quantity and price_usd are numeric
+2026-01-08 13:32:06,575:INFO:main.py:dropped empty quantity and prise_usd columns
+2026-01-08 13:32:06,575:INFO:main.py:transformed data
+2026-01-08 13:32:06,583:INFO:main.py:Raw data shape: (25, 10)
+2026-01-08 13:32:06,583:INFO:main.py:Preparing data for loading
+2026-01-08 13:32:06,586:INFO:main.py:Schema enforced - 10 columns in correct order
+2026-01-08 13:32:06,587:INFO:main.py:Incremental load: filtering records after 2023-12-01
+2026-01-08 13:32:06,588:INFO:main.py:Found 0 new records
+2026-01-08 13:32:06,589:INFO:main.py:loading data into sqlite database
+2026-01-08 13:32:06,617:INFO:main.py:data successfully loaded into database: processed_orders.db
+2026-01-08 13:32:06,617:INFO:main.py:Verification: 0 rows found in database
+2026-01-08 13:32:06,621:INFO:main.py:Backup CSV saved to processed_orders.csv
+2026-01-08 13:32:06,623:CRITICAL:main.py:Pipeline failed: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.
+ - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet.
+2026-01-08 13:39:54,845:INFO:main.py:================================================================================
+2026-01-08 13:39:54,845:INFO:main.py: 
+2026-01-08 13:39:54,846:INFO:main.py:================================================================================
+2026-01-08 13:39:54,846:INFO:main.py:=== ETL Pipeline Started ===
+2026-01-08 13:39:54,846:INFO:main.py:================================================================================
+2026-01-08 13:39:54,850:INFO:main.py:raw data loaded successfully
+2026-01-08 13:39:54,862:INFO:main.py:Raw data shape: (25, 8)
+2026-01-08 13:39:54,863:INFO:main.py:Starting data validation
+2026-01-08 13:39:54,878:INFO:main.py:validation complete --> all data valid
+2026-01-08 13:39:54,879:INFO:main.py:total_order_value column added
+2026-01-08 13:39:54,881:INFO:main.py:transformed order_date
+2026-01-08 13:39:54,882:INFO:main.py:order_month column created
+2026-01-08 13:39:54,883:INFO:main.py:ensured quantity and price_usd are numeric
+2026-01-08 13:39:54,884:INFO:main.py:dropped empty quantity and prise_usd columns
+2026-01-08 13:39:54,884:INFO:main.py:transformed data
+2026-01-08 13:39:54,895:INFO:main.py:Raw data shape: (25, 10)
+2026-01-08 13:39:54,895:INFO:main.py:Preparing data for loading
+2026-01-08 13:39:54,897:INFO:main.py:Schema enforced - 10 columns in correct order
+2026-01-08 13:39:54,897:INFO:main.py:Incremental load: filtering records after 2023-12-01
+2026-01-08 13:39:54,898:INFO:main.py:Found 0 new records
+2026-01-08 13:39:54,898:INFO:main.py:loading data into sqlite database
+2026-01-08 13:39:54,918:INFO:main.py:data successfully loaded into database: processed_orders.db
+2026-01-08 13:39:54,918:INFO:main.py:Verification: 0 rows found in database
+2026-01-08 13:39:54,921:INFO:main.py:Backup CSV saved to processed_orders.csv
+2026-01-08 13:39:54,924:INFO:main.py:Backup Parquet saved
+2026-01-08 13:39:54,925:INFO:main.py:Verifying output file 'processed_orders.csv'...
+2026-01-08 13:39:54,937:INFO:main.py:Verification successful. data head:
+2026-01-08 13:39:54,938:INFO:main.py:Processed data shape: (0, 10)
+2026-01-08 13:39:54,938:INFO:main.py:=== ETL Pipeline Completed Successfully ===
+2026-01-08 13:39:54,939:INFO:main.py:================================================================================
+2026-01-08 13:39:54,939:INFO:main.py: 
+2026-01-08 13:41:41,932:INFO:main.py:================================================================================
+2026-01-08 13:41:41,933:INFO:main.py: 
+2026-01-08 13:41:41,933:INFO:main.py:================================================================================
+2026-01-08 13:41:41,933:INFO:main.py:=== ETL Pipeline Started ===
+2026-01-08 13:41:41,933:INFO:main.py:================================================================================
+2026-01-08 13:41:41,937:INFO:main.py:raw data loaded successfully
+2026-01-08 13:41:41,949:INFO:main.py:Raw data shape: (25, 8)
+2026-01-08 13:41:41,949:INFO:main.py:Starting data validation
+2026-01-08 13:41:41,959:INFO:main.py:validation complete --> all data valid
+2026-01-08 13:41:41,961:INFO:main.py:total_order_value column added
+2026-01-08 13:41:41,964:INFO:main.py:transformed order_date
+2026-01-08 13:41:41,965:INFO:main.py:order_month column created
+2026-01-08 13:41:41,965:INFO:main.py:ensured quantity and price_usd are numeric
+2026-01-08 13:41:41,966:INFO:main.py:dropped empty quantity and prise_usd columns
+2026-01-08 13:41:41,966:INFO:main.py:transformed data
+2026-01-08 13:41:41,977:INFO:main.py:Raw data shape: (25, 10)
+2026-01-08 13:41:41,977:INFO:main.py:Preparing data for loading
+2026-01-08 13:41:41,977:INFO:main.py:Schema enforced - 10 columns in correct order
+2026-01-08 13:41:41,977:INFO:main.py:Incremental load: filtering records after 2022-12-01
+2026-01-08 13:41:41,979:INFO:main.py:Found 25 new records
+2026-01-08 13:41:41,979:INFO:main.py:loading data into sqlite database
+2026-01-08 13:41:42,030:INFO:main.py:data successfully loaded into database: processed_orders.db
+2026-01-08 13:41:42,030:INFO:main.py:Verification: 25 rows found in database
+2026-01-08 13:41:42,044:INFO:main.py:Backup CSV saved to processed_orders.csv
+2026-01-08 13:41:42,070:INFO:main.py:Backup Parquet saved
+2026-01-08 13:41:42,071:INFO:main.py:Verifying output file 'processed_orders.csv'...
+2026-01-08 13:41:42,088:INFO:main.py:Verification successful. data head:
+2026-01-08 13:41:42,098:INFO:main.py:Processed data shape: (25, 10)
+2026-01-08 13:41:42,099:INFO:main.py:=== ETL Pipeline Completed Successfully ===
+2026-01-08 13:41:42,099:INFO:main.py:================================================================================
+2026-01-08 13:41:42,099:INFO:main.py: 
