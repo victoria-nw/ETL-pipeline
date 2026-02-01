@@ -93,40 +93,21 @@ target_schema = ['order_id', 'order_date', 'order_month',
 
 ## Data Validation Logic
 ```python
-# Example validation checks
-- quantity < 0 → Removed
-- price_usd < 0 → Removed
-- status not in ['completed', 'pending', 'cancelled'] → Removed
-- duplicate order_id → Removed (keeping first occurrence)
-```
-
-## Challenges Faced & Solutions
-
-### Challenge 1: Inconsistent Status Values
-**Problem**: Status field contained mixed case ('Completed', 'completed', 'COMPLETED')
-
-**Solution**: Normalized to lowercase before validation
-```python
-invalid_status = ~df['status'].str.lower().isin(valid_status)
-```
-
-### Challenge 2: Type Coercion Errors
-**Problem**: Numeric fields stored as strings caused calculation failures
-
-**Solution**: Explicit type conversion with error handling
-```python
-df['quantity'] = pd.to_numeric(df['quantity'], errors='coerce')
-```
-
-### Challenge 3: Incremental Load Logic
-**Problem**: Needed to support both full and incremental loads
-
-**Solution**: Optional date parameter with fallback to full load
-```python
-if last_load_date:
-    df_incremental = df[df['order_date'] > last_load_date]
-else:
-    return df  # Full load
+python
+class OrderRecord(BaseModel):
+    order_id: str
+    customer_id: str
+    product_id: str
+    order_date: str
+    quantity: int = Field(gt=0)  # Must be positive
+    price_usd: float = Field(gt=0)  # Must be positive
+    status: Literal['completed', 'pending', 'cancelled']
+    delivery_address: str
+    
+    @field_validator('order_date')
+    def validate_date_format(cls, v):
+        datetime.strptime(v, '%Y-%m-%d')
+        return v
 ```
 
 ## Future Enhancements
@@ -187,7 +168,7 @@ else:
 - Separation of concerns (extract, validate, transform, load)
 - Comprehensive error handling
 - Production-grade logging
-- Data quality as a first-class concern
+- Data quality as a concern
 
 ### Data Engineering Concepts:
 - ETL pipeline architecture
@@ -204,8 +185,6 @@ else:
 
 ## Assumptions
 
-- CSV file follows expected schema
-- Order dates in YYYY-MM-DD format
 - Single file processing (not streaming)
 - Data volume fits in memory
 - SQLite sufficient for current scale
