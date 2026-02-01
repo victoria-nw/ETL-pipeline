@@ -1,36 +1,17 @@
-# Customer Order Data Pipeline
+# Customer Order ETL Pipeline
 
-## Business Problem
+## Technical Statement
 Daily processing of customer order data with comprehensive quality validation 
 to support business analytics and reporting. Ensures data integrity through 
 multi-layer validation before loading to data warehouse.
 
 ## What This Project Demonstrates
-
-### Core Data Engineering Skills:
-- **ETL Pipeline Design** - Structured extract, transform, load workflow
-- **Data Quality Validation** - Multi-layer checks for integrity
-- **Production Logging** - Comprehensive audit trails
-- **Incremental Loading** - Efficient data updates
-- **Schema Enforcement** - Controlled data structure
-- **Error Handling** - Graceful failure management
-
-### Technical Implementation:
 - Modular function architecture for maintainability
 - Separation of concerns (validate, transform, load)
 - Idempotent operations (safe to re-run)
 - Database transaction management
 - Multiple export formats (DB, CSV, Parquet)
 
-## Tech Stack
-
-| Component | Technology |
-|-----------|-----------|
-| Language | Python 3.12 |
-| Data Processing | Pandas |
-| Database | SQLite3 |
-| Logging | Python logging module |
-| Data Formats | CSV, Parquet, SQLite |
 
 ## Pipeline Architecture
 ```
@@ -69,12 +50,14 @@ python customer_orders_etl.py
 - Logs data shape and sample
 
 ### 2. Validate
-Implements comprehensive data quality checks:
-- **Missing values**: Identifies and removes incomplete records
-- **Duplicates**: Detects duplicate order IDs
-- **Business rules**: Validates quantity >= 0, price >= 0
-- **Status values**: Ensures valid order status codes
-- **Data types**: Confirms numeric fields are properly formatted
+Implements comprehensive data quality checks using **Pydantic schemas**:
+- **Schema Enforcement**: `OrderRecord` BaseModel validates all fields
+- **Type Validation**: Automatic conversion and validation (str, int, float)
+- **Field Constraints**: Quantity and price must be positive (`Field(gt=0)`)
+- **Allowed Values**: Status restricted to ['completed', 'pending', 'cancelled']
+- **Date Format**: Custom validator ensures YYYY-MM-DD format
+- **Missing Values**: Pydantic rejects incomplete records automatically
+- **Duplicates**: Checked before Pydantic validation
 
 ### 3. Transform
 - Calculates derived metrics (total_order_value)
@@ -90,14 +73,6 @@ Implements comprehensive data quality checks:
 - Creates backup files (CSV + Parquet)
 - Verifies successful load
 
-## Data Quality Metrics
-
-**Validation Results (from logs):**
-- Records processed: 25
-- Duplicates removed: 0
-- Invalid values removed: 0
-- Missing data handled: 0
-- Final valid records: 23 (after filtering cancelled orders)
 
 ## Key Features
 
@@ -115,11 +90,6 @@ target_schema = ['order_id', 'order_date', 'order_month',
                  'customer_id', 'product', 'quantity', 
                  'price_usd', 'total_order_value', 'status']
 ```
-
-### Multiple Export Formats
-- **SQLite**: Primary data warehouse
-- **Parquet**: Columnar format for analytics
-- **CSV**: Human-readable backup
 
 ## Data Validation Logic
 ```python
